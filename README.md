@@ -1,12 +1,45 @@
-# React + Vite
+# 📓 PCM‑Notes – Engineering‑grade LaTeX Notes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Built with React](https://img.shields.io/badge/built%20with-React-61DAFB.svg?logo=react)
+![Tailwind CSS](https://img.shields.io/badge/styled%20with-Tailwind%20CSS-38B2AC.svg?logo=tailwind-css)
+![MongoDB](https://img.shields.io/badge/database-MongoDB-47A248.svg?logo=mongodb)
+![Open Source](https://badgen.net/badge/Open%20Source/yes/green)
 
-Currently, two official plugins are available:
+A modern notes app tailor‑made for engineering & STEM students.  
+Write, preview, and organize math & science notes with **LaTeX**, special symbols, and a clean, elegant UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+> 🔗 **Live demo:** [pcm-notes.vercel.app](https://pcm-notes.vercel.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+✅ **Built‑in LaTeX editor** – type complex equations, integrals, fractions, and matrices easily  
+✅ **One‑click symbol toolbar** – insert math, chemistry, and Greek symbols without Googling  
+✅ **Real‑time preview** – see perfectly rendered equations as you type  
+✅ **MongoDB backend** – securely store and sync your notes  
+✅ **Modern UI** – built with shadcn/ui, Tailwind CSS & Radix UI  
+✅ **Designed specifically** for engineering, math & science students – not just another generic notes app!
+
+---
+
+## 🛠 Tech Stack
+
+- React + Vite
+- Tailwind CSS + shadcn/ui
+- Node.js / Express.js
+- MongoDB
+- TanStack Query
+- React Router
+- Radix UI
+- class‑variance‑authority for component styling
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository:
+```bash
+git clone https://github.com/yourusername/pcm-notes.git
+cd pcm-notes
