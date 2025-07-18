@@ -27,13 +27,13 @@ export const NotesList = ({ notes, selectedNote, onSelectNote, onDeleteNote }) =
       <h2 className="text-lg font-semibold text-gray-800 mb-4">Your Notes</h2>
       {notes.map((note) => (
         <Card 
-          key={note.id}
+          key={note._id || note.id}   // ✅ use MongoDB _id or fallback to id
           className={`cursor-pointer transition-all duration-200 hover:shadow-md ${
-            selectedNote?.id === note.id 
-              ? 'ring-2 ring-blue-500 bg-blue-50' 
+            selectedNote?.id === (note._id || note.id)
+              ? 'ring-2 ring-blue-500 bg-blue-50'
               : 'bg-white hover:bg-gray-50'
           }`}
-          onClick={() => onSelectNote(note)}
+          onClick={() => onSelectNote({ ...note, id: note._id || note.id })}
         >
           <CardContent className="p-4">
             <div className="flex items-start justify-between">
@@ -43,7 +43,7 @@ export const NotesList = ({ notes, selectedNote, onSelectNote, onDeleteNote }) =
                   {getPreview(note.content) || 'Empty note'}
                 </p>
                 <p className="text-xs text-gray-400 mt-2">
-                  {formatDistanceToNow(note.updatedAt, { addSuffix: true })}
+                  {formatDistanceToNow(new Date(note.updatedAt), { addSuffix: true })}
                 </p>
               </div>
               <Button
@@ -51,7 +51,7 @@ export const NotesList = ({ notes, selectedNote, onSelectNote, onDeleteNote }) =
                 size="sm"
                 onClick={(e) => {
                   e.stopPropagation();
-                  onDeleteNote(note.id);
+                  onDeleteNote(note._id || note.id);
                 }}
                 className="text-red-500 hover:text-red-700 hover:bg-red-50 ml-2"
               >

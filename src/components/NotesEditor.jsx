@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { EquationToolbar } from '@/components/EquationToolbar';
 import { LaTeXPreview } from '@/components/LaTeXPreview';
 import { Eye, Edit3, Save } from 'lucide-react';
+import { updateNote } from '../lib/api';
 
 export const NotesEditor = ({ note, onUpdateNote, isCreating, setIsCreating }) => {
   const [title, setTitle] = useState(note.title);
@@ -22,9 +23,14 @@ export const NotesEditor = ({ note, onUpdateNote, isCreating, setIsCreating }) =
     }
   }, [note.id, isCreating, setIsCreating]);
 
-  const handleSave = () => {
-    onUpdateNote({ title, content });
-  };
+ const handleSave = async () => {
+  try {
+    await updateNote(note.id, { title, content });
+    console.log('Note saved successfully!');
+  } catch (error) {
+    console.error('Failed to save note:', error);
+  }
+};
 
   const handleTitleChange = (newTitle) => {
     setTitle(newTitle);
